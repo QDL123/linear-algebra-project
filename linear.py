@@ -1,5 +1,5 @@
 #import libraries
-%matplotlib inline
+#matplotlib inline
 import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
@@ -8,8 +8,8 @@ print(dataset.shape)
 dataset.head()
 
 # initializing our inputs and outputs
-X = dataset['Water Temperature'].values
-Y = dataset['Water Salinity'].values
+X = dataset['T_degC'].values
+Y = dataset['Salnty'].values
 # mean of our inputs and outputs
 x_mean = np.mean(X)
 y_mean = np.mean(Y)
@@ -38,7 +38,7 @@ plt.plot(x, y, color='#00ff00', label='Linear Regression')
 #plot the data point
 plt.scatter(X, Y, color='#ff0000', label='Data Point')
 # x-axis label
-plt.xlabel('Water Temperature')
+plt.xlabel('Temperature (degree Celcius)')
 #y-axis label
 plt.ylabel('Water Salinity')
 plt.legend()
