@@ -26,7 +26,6 @@ b1 = numerator / denominator
 b0 = y_mean - (b1 * x_mean)
 #printing the coefficient
 print(b1, b0)
-# output : 0.26342933948939945 325.57342104944223
 
 #plotting values
 x_max = np.max(X) + 100
@@ -44,3 +43,21 @@ plt.xlabel('Head Size (cm^3)')
 plt.ylabel('Brain Weight (grams)')
 plt.legend()
 plt.show()
+
+rmse = 0
+for i in range(n):
+    y_pred=  b0 + b1* X[i]
+    rmse += (Y[i] - y_pred) ** 2
+
+rmse = np.sqrt(rmse/n)
+print(rmse)
+
+sumofsquares = 0
+sumofresiduals = 0
+for i in range(n) :
+    y_pred = b0 + b1 * X[i]
+    sumofsquares += (Y[i] - y_mean) ** 2
+    sumofresiduals += (Y[i] - y_pred) **2
+
+score  = 1 - (sumofresiduals/sumofsquares)
+print(score)
