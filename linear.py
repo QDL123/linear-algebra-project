@@ -8,8 +8,8 @@ print(dataset.shape)
 dataset.head()
 
 # initializing our inputs and outputs
-X = dataset['Head Size(cm^3)'].values
-Y = dataset['Brain Weight(grams)'].values
+X = dataset['Water Temperature'].values
+Y = dataset['Water Salinity'].values
 # mean of our inputs and outputs
 x_mean = np.mean(X)
 y_mean = np.mean(Y)
@@ -38,9 +38,9 @@ plt.plot(x, y, color='#00ff00', label='Linear Regression')
 #plot the data point
 plt.scatter(X, Y, color='#ff0000', label='Data Point')
 # x-axis label
-plt.xlabel('Head Size (cm^3)')
+plt.xlabel('Water Temperature')
 #y-axis label
-plt.ylabel('Brain Weight (grams)')
+plt.ylabel('Water Salinity')
 plt.legend()
 plt.show()
 
